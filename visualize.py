@@ -143,9 +143,11 @@ def save_instances(image, boxes, masks, class_ids, class_names,
             verts = np.fliplr(verts) - 1
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
-    #fig.savefig("predictions.png")
-	plt.draw()
-	fig.savefig("predict.png")
+    #fig.savefig("predictions.png")  
+    #plt.draw()
+    #fig.figimage(masked_image.astype(np.uint8))
+    #fig.add_axes(ax)
+    #fig.savefig("predict.png")
     scipy.misc.imsave("predictions.png", masked_image)
 
 def display_instances(image, boxes, masks, class_ids, class_names,
